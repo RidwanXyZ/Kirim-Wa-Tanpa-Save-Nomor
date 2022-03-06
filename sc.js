@@ -8,14 +8,12 @@ form.addEventListener('submit', (i) => {
   pesan = form.pesan.value;
   tujuan = form.no.value;
 })
+var link = `https://api.whatsapp.com/send?phone=${tujuan}&text=${pesan}`;
 
-
-function kirim(){
-  if (tujuan.length < 10) {
-    alert("Dek, masukin yang bener lah kontol!!")
-    return false
-  } else {
-    var link = `https://api.whatsapp.com/send?phone=${tujuan}&text=${pesan}`;
+function kirim() {
+  if (tujuan == undefined && tujuan.length <= 9 && tujuan.length >= 14) {
     window.open(link, '_blank')
+  } else {
+    alert('invalid phone number!')
   }
 }
