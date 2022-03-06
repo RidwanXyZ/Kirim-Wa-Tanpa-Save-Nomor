@@ -7,6 +7,7 @@ form.addEventListener('submit', (i) => {
   nama = form.nama.value;
   pesan = form.pesan.value;
   tujuan = form.no.value;
+  kirim()
 })
 var link = `https://api.whatsapp.com/send?phone=${tujuan}&text=${pesan}`;
 
